@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<!--
+  history.html — История стран Балтии
+  Включает: хронологию, таблицу сравнения, раздел по каждой стране
+-->
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <!-- Мета-тег viewport обязателен для адаптивного дизайна -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="История стран Балтии: от древних времён до наших дней. Хронология ключевых событий Литвы, Латвии и Эстонии.">
+    <meta name="keywords" content="история Балтии, Литва история, Латвия история, Эстония история">
+    <meta name="author" content="Baltic Heritage Project">
+    <title>История — Страны Балтии</title>
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/animations.css">
+
+    <!-- Иконка сайта -->
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+<!-- Прогресс-бар прокрутки -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ===== ШАПКА ===== -->
+<header class="site-header" role="banner">
+    <div class="header-inner">
+        <a href="index.html" class="logo-wrap" aria-label="Главная страница">
+            <img src="images/logo.svg" alt="Логотип Страны Балтии" width="46" height="46">
+            <span>Страны Балтии</span>
+        </a>
+        <nav aria-label="Главное меню">
+            <ul class="site-nav" id="main-nav" role="list">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="history.html" class="active">История</a></li>
+                <li><a href="culture.html">Культура</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <button class="nav-toggle" id="nav-toggle"
+                aria-label="Открыть меню" aria-expanded="false" aria-controls="main-nav">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<!-- ===== КОНТЕНТ ===== -->
+<main id="main-content">
+
+    <!-- Герой страницы -->
+    <div class="page-hero">
+        <div class="container">
+            <h1>История Балтии</h1>
+            <p>От древних балтийских племён до современных европейских государств</p>
+        </div>
+    </div>
+
+    <!-- Хлебные крошки -->
+    <div class="container">
+        <nav class="breadcrumb" aria-label="Хлебные крошки">
+            <a href="index.html">Главная</a>
+            <span aria-hidden="true">›</span>
+            <span aria-current="page">История</span>
+        </nav>
+    </div>
+
+    <!-- ===== Таблица сравнения стран ===== -->
+    <section id="comparison-table" aria-labelledby="table-heading" class="anchor-target">
+        <div class="container">
+            <h2 class="section-title" id="table-heading">Сравнение стран Балтии</h2>
+            <p class="section-subtitle">Основные факты и характеристики трёх прибалтийских государств</p>
+
+            <!-- Обёртка с горизонтальной прокруткой для мобильных -->
+            <div class="table-wrapper">
+                <table class="data-table" aria-label="Сравнительная таблица стран Балтии">
+                    <thead>
+                        <tr>
+                            <th scope="col">Характеристика</th>
+                            <th scope="col">🇱🇹 Литва</th>
+                            <th scope="col">🇱🇻 Латвия</th>
+                            <th scope="col">🇪🇪 Эстония</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Столица</td>
+                            <td>Вильнюс</td>
+                            <td>Рига</td>
+                            <td>Таллин</td>
+                        </tr>
+                        <tr>
+                            <td>Площадь</td>
+                            <td>65 300 км²</td>
+                            <td>64 589 км²</td>
+                            <td>45 228 км²</td>
+                        </tr>
+                        <tr>
+                            <td>Население</td>
+                            <td>~2,8 млн чел.</td>
+                            <td>~1,8 млн чел.</td>
+                            <td>~1,3 млн чел.</td>
+                        </tr>
+                        <tr>
+                            <td>Официальный язык</td>
+                            <td>Литовский</td>
+                            <td>Латышский</td>
+                            <td>Эстонский</td>
+                        </tr>
+                        <tr>
+                            <td>Языковая группа</td>
+                            <td>Балтийская (индоевропейская)</td>
+                            <td>Балтийская (индоевропейская)</td>
+                            <td>Финно-угорская</td>
+                        </tr>
+                        <tr>
+                            <td>Независимость провозглашена</td>
+                            <td>11 марта 1990</td>
+                            <td>4 мая 1990</td>
+                            <td>20 августа 1991</td>
+                        </tr>
+                        <tr>
+                            <td>Членство в ЕС</td>
+                            <td>1 мая 2004</td>
+                            <td>1 мая 2004</td>
+                            <td>1 мая 2004</td>
+                        </tr>
+                        <tr>
+                            <td>Членство в НАТО</td>
+                            <td>29 марта 2004</td>
+                            <td>29 марта 2004</td>
+                            <td>29 марта 2004</td>
+                        </tr>
+                        <tr>
+                            <td>Валюта</td>
+                            <td>Евро (€)</td>
+                            <td>Евро (€)</td>
+                            <td>Евро (€)</td>
+                        </tr>
+                        <tr>
+                            <td>Форма правления</td>
+                            <td>Парламентская республика</td>
+                            <td>Парламентская республика</td>
+                            <td>Парламентская республика</td>
+                        </tr>
+                        <tr>
+                            <td>Самая высокая точка</td>
+                            <td>Аукштойи (294 м)</td>
+                            <td>Гайзинькалнс (312 м)</td>
+                            <td>Суур-Мунамяги (318 м)</td>
+                        </tr>
+                        <tr>
+                            <td>Объекты ЮНЕСКО</td>
+                            <td>4 объекта</td>
+                            <td>2 объекта</td>
+                            <td>1 объект</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Хронология событий (динамически генерируется JS) ===== -->
+    <section id="timeline" aria-labelledby="timeline-heading" class="anchor-target">
+        <div class="container">
+            <div class="text-center mb-3">
+                <h2 class="section-title" id="timeline-heading">Хронология истории</h2>
+                <p class="section-subtitle">Ключевые события в истории Балтийского региона</p>
+            </div>
+            <!-- Временная линия генерируется через interactive.js -->
+            <div class="timeline" id="dynamic-timeline" aria-label="Хронология исторических событий Балтии">
+                <!-- Контент добавляется через JavaScript -->
+                <noscript>
+                    <p>Для просмотра хронологии включите JavaScript.</p>
+                </noscript>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== История каждой страны ===== -->
+
+    <!-- Литва -->
+    <section id="lithuania" aria-labelledby="lt-heading" class="anchor-target">
+        <div class="container">
+            <div class="grid-2">
+                <div>
+                    <h2 class="section-title" id="lt-heading">🇱🇹 Литва</h2>
+                    <p>Литва имеет одну из самых богатых историй среди прибалтийских государств.
+                       В XIII–XVI веках Великое Княжество Литовское было одним из крупнейших
+                       государств Европы, простиравшимся от Балтийского до Чёрного моря.</p>
+
+                    <h3>Ключевые периоды</h3>
+                    <ul>
+                        <li><strong>XIII в.</strong> — Объединение литовских племён под властью Миндовга</li>
+                        <li><strong>1253</strong> — Миндовг коронован первым королём Литвы</li>
+                        <li><strong>1323</strong> — Вильнюс становится столицей</li>
+                        <li><strong>1385</strong> — Кревская уния с Польшей</li>
+                        <li><strong>1569</strong> — Люблинская уния: образование Речи Посполитой</li>
+                        <li><strong>1795</strong> — Раздел Польши; Литва входит в состав России</li>
+                        <li><strong>1918</strong> — Провозглашение независимости</li>
+                        <li><strong>1990</strong> — Литва первой из советских республик восстанавливает независимость</li>
+                    </ul>
+
+                    <!-- Прогресс-бар популярности среди туристов -->
+                    <div class="mt-3">
+                        <p style="font-size:0.9rem; margin-bottom:0.3rem;"><strong>Туристическая привлекательность</strong></p>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" data-width="78" style="width:0"></div>
+                        </div>
+                        <small class="text-muted">78/100 баллов по индексу туризма</small>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <img src="images/vilnius.svg"
+                         alt="Стилизованная иллюстрация Вильнюса с Замком Гедимина на горе"
+                         style="border-radius:var(--radius-lg); box-shadow:var(--shadow-md); width:100%;">
+                    <p class="text-muted" style="font-size:0.85rem; margin-top:0.5rem;">Вильнюс — замок Гедимина</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Латвия -->
+    <section id="latvia" aria-labelledby="lv-heading" class="anchor-target">
+        <div class="container">
+            <div class="grid-2">
+                <div class="reveal">
+                    <img src="images/riga.svg"
+                         alt="Стилизованная панорама Риги с Домским собором"
+                         style="border-radius:var(--radius-lg); box-shadow:var(--shadow-md); width:100%;">
+                    <p class="text-muted" style="font-size:0.85rem; margin-top:0.5rem;">Рига — исторический центр</p>
+                </div>
+                <div>
+                    <h2 class="section-title" id="lv-heading">🇱🇻 Латвия</h2>
+                    <p>Территория Латвии была заселена балтийскими племенами латышей и ливов
+                       задолго до прихода крестоносцев. В начале XIII века немецкие рыцари-меченосцы
+                       основали здесь орденское государство.</p>
+
+                    <h3>Ключевые периоды</h3>
+                    <ul>
+                        <li><strong>1201</strong> — Основание Риги епископом Альбертом</li>
+                        <li><strong>1237</strong> — Образование Ливонского ордена</li>
+                        <li><strong>1282</strong> — Рига вступает в Ганзейский союз</li>
+                        <li><strong>1561</strong> — Распад Ливонского ордена</li>
+                        <li><strong>1629–1721</strong> — Шведский период («золотой век»)</li>
+                        <li><strong>1721</strong> — Присоединение к Российской империи</li>
+                        <li><strong>1918</strong> — Провозглашение независимости</li>
+                        <li><strong>1991</strong> — Восстановление независимости</li>
+                    </ul>
+
+                    <div class="mt-3">
+                        <p style="font-size:0.9rem; margin-bottom:0.3rem;"><strong>Туристическая привлекательность</strong></p>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" data-width="82" style="width:0"></div>
+                        </div>
+                        <small class="text-muted">82/100 баллов по индексу туризма</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Эстония -->
+    <section id="estonia" aria-labelledby="ee-heading" class="anchor-target">
+        <div class="container">
+            <div class="grid-2">
+                <div>
+                    <h2 class="section-title" id="ee-heading">🇪🇪 Эстония</h2>
+                    <p>Эстония — единственная из трёх прибалтийских стран, принадлежащая к
+                       финно-угорской языковой группе. Её история тесно переплетена с историей
+                       Дании, Швеции и России.</p>
+
+                    <h3>Ключевые периоды</h3>
+                    <ul>
+                        <li><strong>1219</strong> — Датское завоевание; основан Таллин («Датский замок»)</li>
+                        <li><strong>1238</strong> — Дания продаёт Эстонию Ливонскому ордену</li>
+                        <li><strong>1561</strong> — Северная Эстония переходит под власть Швеции</li>
+                        <li><strong>1629</strong> — Вся Эстония под шведским управлением</li>
+                        <li><strong>1721</strong> — Присоединение к Российской империи</li>
+                        <li><strong>1918</strong> — Провозглашение независимости</li>
+                        <li><strong>1940–1991</strong> — Советский период</li>
+                        <li><strong>2007</strong> — Первая страна с онлайн-голосованием на выборах</li>
+                    </ul>
+
+                    <div class="info-box">
+                        <p>🌐 <strong>Цифровое государство:</strong> Эстония — мировой лидер
+                           в области электронного правительства. Почти все государственные
+                           услуги доступны онлайн. Здесь родился Skype.</p>
+                    </div>
+
+                    <div class="mt-3">
+                        <p style="font-size:0.9rem; margin-bottom:0.3rem;"><strong>Туристическая привлекательность</strong></p>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" data-width="85" style="width:0"></div>
+                        </div>
+                        <small class="text-muted">85/100 баллов по индексу туризма</small>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <img src="images/tallinn.svg"
+                         alt="Стилизованная иллюстрация старого города Таллина со средневековыми башнями"
+                         style="border-radius:var(--radius-lg); box-shadow:var(--shadow-md); width:100%;">
+                    <p class="text-muted" style="font-size:0.85rem; margin-top:0.5rem;">Таллин — старый город</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Внешняя ссылка на источник -->
+    <section>
+        <div class="container">
+            <div class="info-box">
+                <p>📚 Источник исторических данных:
+                   <a href="https://ru.wikipedia.org/wiki/Страны_Балтии"
+                      target="_blank" rel="noopener noreferrer"
+                      class="external-link">Страны Балтии — Википедия</a>.
+                   Медиафайлы предоставлены
+                   <a href="https://commons.wikimedia.org"
+                      target="_blank" rel="noopener noreferrer"
+                      class="external-link">Wikimedia Commons</a>
+                   по лицензии Creative Commons.</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ===== ПОДВАЛ ===== -->
+<footer class="site-footer" role="contentinfo">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo-text">Страны Балтии</div>
+                <p>Образовательный сайт о культуре и истории Литвы, Латвии и Эстонии.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="history.html">История</a></li>
+                    <li><a href="culture.html">Культура</a></li>
+                    <li><a href="gallery.html">Галерея</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>История</h4>
+                <ul>
+                    <li><a href="#comparison-table">Таблица</a></li>
+                    <li><a href="#timeline">Хронология</a></li>
+                    <li><a href="#lithuania">Литва</a></li>
+                    <li><a href="#latvia">Латвия</a></li>
+                    <li><a href="#estonia">Эстония</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Ресурсы</h4>
+                <ul>
+                    <li><a href="https://ru.wikipedia.org/wiki/Страны_Балтии" target="_blank" rel="noopener">Википедия</a></li>
+                    <li><a href="https://www.latvia.eu" target="_blank" rel="noopener">latvia.eu</a></li>
+                    <li><a href="https://www.visitestonia.com" target="_blank" rel="noopener">visitestonia.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© <span id="footer-year">2024</span> Страны Балтии. Образовательный проект.</span>
+            <span>Данные: Wikimedia Commons (CC)</span>
+        </div>
+    </div>
+</footer>
+
+<!-- Лайтбокс -->
+<div id="lightbox" role="dialog" aria-label="Просмотр изображения" aria-modal="true">
+    <button id="lightbox-close" aria-label="Закрыть">✕</button>
+    <img id="lightbox-img" src="" alt="Просмотр изображения">
+    <p id="lightbox-caption" style="color:rgba(255,255,255,0.7); text-align:center; padding:0.5rem;"></p>
+</div>
+
+<!-- Скрипты -->
+<script src="scripts/main.js"></script>
+<script src="scripts/interactive.js"></script>
+</body>
+</html>

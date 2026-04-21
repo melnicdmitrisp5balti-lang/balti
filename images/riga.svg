@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <!-- Рига — панорама города -->
+  <defs>
+    <linearGradient id="skyR" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8f4ff"/>
+      <stop offset="100%" style="stop-color:#b8d8f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#skyR)"/>
+  <!-- Облака -->
+  <ellipse cx="100" cy="90"  rx="65" ry="22" fill="white" opacity="0.9"/>
+  <ellipse cx="160" cy="80"  rx="50" ry="18" fill="white" opacity="0.9"/>
+  <ellipse cx="650" cy="110" rx="75" ry="25" fill="white" opacity="0.8"/>
+  <!-- Земля -->
+  <rect x="0" y="390" width="800" height="110" fill="#5a8040"/>
+  <!-- Домский собор (центр) -->
+  <rect x="300" y="210" width="200" height="230" fill="#d6c8b0"/>
+  <polygon points="300,210 400,120 500,210" fill="#a89060"/>
+  <rect x="390" y="100" width="20" height="50" fill="#c8a830"/>
+  <rect x="395" y="85"  width="10" height="22" fill="#8b7060"/>
+  <rect x="398" y="68"  width="4" height="24" fill="#8b7060"/>
+  <polygon points="397,68 400,58 403,68" fill="#c8a830"/>
+  <!-- Окна собора -->
+  <rect x="325" y="255" width="25" height="40" fill="#87ceeb" rx="3"/>
+  <rect x="370" y="255" width="25" height="40" fill="#87ceeb" rx="3"/>
+  <rect x="415" y="255" width="25" height="40" fill="#87ceeb" rx="3"/>
+  <rect x="460" y="255" width="25" height="40" fill="#87ceeb" rx="3"/>
+  <!-- Дверь -->
+  <rect x="380" y="355" width="40" height="85" fill="#8b6914" rx="3"/>
+  <!-- Здание слева -->
+  <rect x="100" y="270" width="170" height="170" fill="#e8ddc8"/>
+  <rect x="100" y="255" width="170" height="18" fill="#c8b890"/>
+  <!-- Башня -->
+  <rect x="60"  y="240" width="55" height="200" fill="#d8c8b0"/>
+  <polygon points="60,240 87,180 115,240" fill="#b0a080"/>
+  <rect x="83"  y="165" width="9" height="25" fill="#c8a830"/>
+  <!-- Здание справа -->
+  <rect x="530" y="265" width="160" height="175" fill="#ddd0b8"/>
+  <rect x="530" y="250" width="160" height="18" fill="#c0b090"/>
+  <!-- Башня справа -->
+  <rect x="710" y="250" width="60" height="190" fill="#d0c0a8"/>
+  <polygon points="710,250 740,195 770,250" fill="#a89870"/>
+  <rect x="736" y="180" width="9" height="22" fill="#c8a830"/>
+  <!-- Река Даугава -->
+  <ellipse cx="400" cy="420" rx="380" ry="25" fill="#6aaccf" opacity="0.55"/>
+  <path d="M20 412 Q200 400 400 415 Q600 430 780 418" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="none"/>
+  <!-- Надпись -->
+  <text x="400" y="480" text-anchor="middle" font-family="serif" font-size="20" fill="#3a2a10" font-weight="bold">Рига — Исторический центр</text>
+</svg>

@@ -1,0 +1,280 @@
+/*
+ * responsive.css — Адаптивные стили сайта «Балтийские страны»
+ * Брейкпоинты: мобильные (<576px), планшеты (576–992px), ПК (>992px)
+ */
+
+/* ===== Планшеты (≤992px) ===== */
+@media (max-width: 992px) {
+
+    /* Типографика */
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.75rem; }
+    .hero h1 { font-size: 2.6rem; }
+    .page-hero h1 { font-size: 2.2rem; }
+
+    /* Навигация — показываем гамбургер */
+    .nav-toggle {
+        display: flex;
+    }
+
+    .site-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(180deg, #0f2d44, var(--color-primary));
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: var(--shadow-md);
+        gap: 0;
+    }
+
+    .site-nav.open {
+        display: flex;
+    }
+
+    .site-nav li {
+        width: 100%;
+    }
+
+    .site-nav li a {
+        padding: 0.75rem 1.5rem;
+        border-radius: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        font-size: 1rem;
+        display: block;
+    }
+
+    /* Сетки переходят в 2 колонки */
+    .countries-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .facts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .culture-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .grid-2,
+    .grid-2-3 {
+        grid-template-columns: 1fr;
+    }
+
+    /* Временная линия — упрощаем */
+    .timeline::before {
+        left: 1.5rem;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+        flex-direction: row;
+        gap: 1.25rem;
+    }
+
+    .timeline-date {
+        display: none;
+    }
+
+    .timeline-dot {
+        flex: 0 0 1rem;
+        margin-left: 1rem;
+    }
+
+    .timeline-content {
+        flex: 1;
+    }
+
+    /* Видео */
+    .media-block iframe {
+        height: 320px;
+    }
+}
+
+/* ===== Мобильные (≤576px) ===== */
+@media (max-width: 576px) {
+
+    /* Типографика */
+    html { font-size: 15px; }
+    h1 { font-size: 1.9rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+    .hero h1 { font-size: 2rem; }
+    .page-hero h1 { font-size: 1.8rem; }
+    .section-title { font-size: 1.75rem; }
+
+    /* Шапка */
+    .header-inner {
+        padding: 0.6rem 1rem;
+    }
+
+    .logo-wrap span {
+        font-size: 1rem;
+    }
+
+    /* Герой */
+    .hero {
+        padding: 1.5rem 1rem;
+        padding-top: 70px;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        padding: 0.65rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Секции */
+    section {
+        padding: 3rem 0;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* Сетки в 1 колонку */
+    .countries-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .facts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .culture-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quiz-options {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    /* Форма */
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .radio-group, .checkbox-group {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    /* Таблица */
+    .data-table thead th,
+    .data-table td {
+        padding: 0.7rem 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    /* Временная линия */
+    .timeline-content {
+        padding: 1rem;
+    }
+
+    .fact-number {
+        font-size: 2rem;
+    }
+
+    /* Видео */
+    .media-block iframe {
+        height: 220px;
+    }
+
+    /* Страница-герой */
+    .page-hero {
+        padding: 3.5rem 0 2rem;
+    }
+
+    /* Карточка страны */
+    .country-card-img {
+        height: 140px;
+    }
+}
+
+/* ===== Широкие экраны (≥1400px) ===== */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .facts-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ===== Печать ===== */
+@media print {
+    .site-header,
+    .site-footer,
+    .nav-toggle,
+    .hero-btns,
+    #quiz-widget {
+        display: none !important;
+    }
+
+    body {
+        font-size: 12pt;
+        color: #000;
+    }
+
+    a::after {
+        content: ' (' attr(href) ')';
+        font-size: 0.8em;
+    }
+
+    .page-hero {
+        background: none;
+        color: #000;
+        padding: 1rem 0;
+    }
+
+    .page-hero h1,
+    .page-hero p {
+        color: #000;
+    }
+
+    main {
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <!-- Традиционные национальные костюмы Балтии -->
+  <defs>
+    <linearGradient id="costumesBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f0e0"/>
+      <stop offset="100%" style="stop-color:#ede0c8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#costumesBg)"/>
+  <!-- Декоративный бордюр -->
+  <rect x="10" y="10" width="780" height="480" fill="none" stroke="#8b6914" stroke-width="3" rx="8"/>
+  <rect x="18" y="18" width="764" height="464" fill="none" stroke="#c8a830" stroke-width="1" rx="6"/>
+
+  <!-- Литовский костюм (слева) -->
+  <!-- Голова -->
+  <ellipse cx="200" cy="140" rx="35" ry="38" fill="#f0d8b0"/>
+  <!-- Волосы + венок -->
+  <ellipse cx="200" cy="118" rx="35" ry="18" fill="#8b5e3c"/>
+  <!-- Венок -->
+  <ellipse cx="200" cy="114" rx="36" ry="10" fill="none" stroke="#006A44" stroke-width="5"/>
+  <g fill="#FFD700">
+    <circle cx="174" cy="112" r="5"/><circle cx="188" cy="107" r="4"/>
+    <circle cx="200" cy="106" r="5"/><circle cx="212" cy="107" r="4"/><circle cx="226" cy="112" r="5"/>
+  </g>
+  <!-- Тело -->
+  <path d="M165 178 L145 380 L255 380 L235 178 Z" fill="white"/>
+  <!-- Передник -->
+  <rect x="172" y="220" width="56" height="120" fill="#C1272D" rx="2"/>
+  <!-- Полосы на переднике -->
+  <rect x="172" y="230" width="56" height="8" fill="#FFD700" opacity="0.7"/>
+  <rect x="172" y="250" width="56" height="6" fill="#006A44" opacity="0.7"/>
+  <rect x="172" y="270" width="56" height="8" fill="#FFD700" opacity="0.7"/>
+  <!-- Жилет -->
+  <path d="M172 180 L165 220 L235 220 L228 180 Z" fill="#8b1a1a"/>
+  <!-- Надпись -->
+  <text x="200" y="420" text-anchor="middle" font-family="serif" font-size="14" fill="#5a3010" font-weight="bold">Литва</text>
+
+  <!-- Латвийский костюм (центр) -->
+  <ellipse cx="400" cy="135" rx="33" ry="36" fill="#f2d8b2"/>
+  <ellipse cx="400" cy="113" rx="33" ry="17" fill="#7a4e2c"/>
+  <!-- Головной убор -->
+  <rect x="368" y="104" width="64" height="16" fill="#9E3039" rx="3"/>
+  <rect x="363" y="100" width="74" height="8"  fill="#c8b890" rx="2"/>
+  <!-- Тело -->
+  <path d="M368 172 L348 375 L452 375 L432 172 Z" fill="#f8f0e0"/>
+  <!-- Пояс с узором -->
+  <rect x="365" y="215" width="70" height="18" fill="#9E3039"/>
+  <g fill="#f8c820">
+    <rect x="370" y="218" width="8" height="12"/><rect x="382" y="218" width="8" height="12"/>
+    <rect x="394" y="218" width="8" height="12"/><rect x="406" y="218" width="8" height="12"/>
+    <rect x="418" y="218" width="8" height="12"/>
+  </g>
+  <!-- Брошь -->
+  <circle cx="400" cy="190" r="8" fill="#c8a830"/>
+  <circle cx="400" cy="190" r="5" fill="#8b6914"/>
+  <!-- Надпись -->
+  <text x="400" y="415" text-anchor="middle" font-family="serif" font-size="14" fill="#5a3010" font-weight="bold">Латвия</text>
+
+  <!-- Эстонский костюм (справа) -->
+  <ellipse cx="600" cy="140" rx="34" ry="37" fill="#f0d8b0"/>
+  <ellipse cx="600" cy="118" rx="34" ry="18" fill="#6a4830"/>
+  <!-- Белый чепец -->
+  <ellipse cx="600" cy="112" rx="36" ry="12" fill="white"/>
+  <path d="M564 112 Q600 98 636 112 L636 116 Q600 102 564 116 Z" fill="white"/>
+  <!-- Тело -->
+  <path d="M567 176 L547 380 L653 380 L633 176 Z" fill="#f0f0f0"/>
+  <!-- Синяя юбка -->
+  <rect x="560" y="260" width="80" height="120" fill="#0072CE" rx="2"/>
+  <!-- Белые полосы -->
+  <rect x="560" y="265" width="80" height="5" fill="white" opacity="0.8"/>
+  <rect x="560" y="280" width="80" height="5" fill="white" opacity="0.8"/>
+  <rect x="560" y="295" width="80" height="5" fill="white" opacity="0.8"/>
+  <!-- Жилет чёрный -->
+  <path d="M568 178 L560 262 L640 262 L632 178 Z" fill="#2a2a2a"/>
+  <!-- Белая рубашка -->
+  <path d="M578 178 L572 258 L628 258 L622 178 Z" fill="#f8f8f8"/>
+  <!-- Надпись -->
+  <text x="600" y="420" text-anchor="middle" font-family="serif" font-size="14" fill="#5a3010" font-weight="bold">Эстония</text>
+
+  <!-- Заголовок -->
+  <text x="400" y="470" text-anchor="middle" font-family="serif" font-size="18" fill="#3a2010" font-weight="bold">Традиционные костюмы стран Балтии</text>
+</svg>
