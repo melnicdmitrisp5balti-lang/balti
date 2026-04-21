@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!--
+  contact.html — Страница контактов и обратной связи
+  Содержит: форму с 4+ полями, контактную информацию, карту, обработку данных на клиенте
+-->
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport для адаптивного дизайна -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Свяжитесь с нами: задайте вопрос о культуре и истории Балтии, предложите сотрудничество или оставьте отзыв.">
+    <meta name="keywords" content="контакты, обратная связь, вопросы о Балтии">
+    <meta name="author" content="Baltic Heritage Project">
+    <title>Контакты — Страны Балтии</title>
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/animations.css">
+
+    <!-- Иконка -->
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+<!-- Прогресс-бар прокрутки -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ===== ШАПКА ===== -->
+<header class="site-header" role="banner">
+    <div class="header-inner">
+        <a href="index.html" class="logo-wrap" aria-label="Главная страница">
+            <img src="images/logo.svg" alt="Логотип Страны Балтии" width="46" height="46">
+            <span>Страны Балтии</span>
+        </a>
+        <nav aria-label="Главное меню">
+            <ul class="site-nav" id="main-nav" role="list">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="history.html">История</a></li>
+                <li><a href="culture.html">Культура</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="contact.html" class="active">Контакты</a></li>
+            </ul>
+        </nav>
+        <button class="nav-toggle" id="nav-toggle"
+                aria-label="Открыть меню" aria-expanded="false" aria-controls="main-nav">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<!-- ===== КОНТЕНТ ===== -->
+<main id="main-content">
+
+    <!-- Герой страницы -->
+    <div class="page-hero">
+        <div class="container">
+            <h1>Свяжитесь с нами</h1>
+            <p>Задайте вопрос, поделитесь информацией или предложите сотрудничество</p>
+        </div>
+    </div>
+
+    <!-- Хлебные крошки -->
+    <div class="container">
+        <nav class="breadcrumb" aria-label="Хлебные крошки">
+            <a href="index.html">Главная</a>
+            <span aria-hidden="true">›</span>
+            <span aria-current="page">Контакты</span>
+        </nav>
+    </div>
+
+    <!-- ===== Основная секция ===== -->
+    <section id="contact-section" aria-labelledby="contact-heading">
+        <div class="container">
+
+            <div class="grid-2">
+
+                <!-- ===== Форма обратной связи ===== -->
+                <div>
+                    <h2 class="section-title" id="contact-heading">Форма обратной связи</h2>
+                    <p class="section-subtitle">Все поля, отмеченные *, обязательны для заполнения</p>
+
+                    <!--
+                      Форма содержит:
+                      1. text     — имя
+                      2. email    — электронная почта
+                      3. select   — выбор страны
+                      4. radio    — тема обращения
+                      5. checkbox — интересующие разделы
+                      6. textarea — сообщение
+                      Обработка: client-side через form-handler.js
+                    -->
+                    <form id="contact-form"
+                          class="contact-form"
+                          novalidate
+                          aria-label="Форма обратной связи">
+
+                        <!-- 1. Поле: Имя (text) -->
+                        <div class="form-group">
+                            <label for="cf-name">Ваше имя *</label>
+                            <input type="text"
+                                   id="cf-name"
+                                   name="cf-name"
+                                   class="form-control"
+                                   placeholder="Введите ваше имя"
+                                   autocomplete="name"
+                                   aria-required="true"
+                                   aria-describedby="cf-name-error">
+                            <span class="form-error" id="cf-name-error" role="alert"></span>
+                        </div>
+
+                        <!-- 2. Поле: Email -->
+                        <div class="form-group">
+                            <label for="cf-email">Электронная почта *</label>
+                            <input type="email"
+                                   id="cf-email"
+                                   name="cf-email"
+                                   class="form-control"
+                                   placeholder="your@email.com"
+                                   autocomplete="email"
+                                   aria-required="true"
+                                   aria-describedby="cf-email-error">
+                            <span class="form-error" id="cf-email-error" role="alert"></span>
+                        </div>
+
+                        <!-- 3. Поле: Страна (select) -->
+                        <div class="form-group">
+                            <label for="cf-country">Ваша страна *</label>
+                            <select id="cf-country"
+                                    name="cf-country"
+                                    class="form-control"
+                                    aria-required="true"
+                                    aria-describedby="cf-country-error">
+                                <option value="">— Выберите страну —</option>
+                                <optgroup label="Страны Балтии">
+                                    <option value="lt">🇱🇹 Литва</option>
+                                    <option value="lv">🇱🇻 Латвия</option>
+                                    <option value="ee">🇪🇪 Эстония</option>
+                                </optgroup>
+                                <optgroup label="Другие страны">
+                                    <option value="ru">🇷🇺 Россия</option>
+                                    <option value="by">🇧🇾 Беларусь</option>
+                                    <option value="pl">🇵🇱 Польша</option>
+                                    <option value="fi">🇫🇮 Финляндия</option>
+                                    <option value="se">🇸🇪 Швеция</option>
+                                    <option value="de">🇩🇪 Германия</option>
+                                    <option value="ua">🇺🇦 Украина</option>
+                                    <option value="other">🌍 Другая</option>
+                                </optgroup>
+                            </select>
+                            <span class="form-error" id="cf-country-error" role="alert"></span>
+                        </div>
+
+                        <!-- 4. Поле: Тема (radio) -->
+                        <div class="form-group">
+                            <fieldset style="border:none; padding:0; margin:0;">
+                                <legend style="font-weight:600; font-size:0.9rem; color:var(--color-primary); margin-bottom:0.45rem;">
+                                    Тема обращения
+                                </legend>
+                                <div class="radio-group">
+                                    <label>
+                                        <input type="radio" name="cf-topic" value="history" checked>
+                                        История
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="cf-topic" value="culture">
+                                        Культура
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="cf-topic" value="tourism">
+                                        Туризм
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="cf-topic" value="other-topic">
+                                        Другое
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <!-- 5. Поле: Интересующие разделы (checkbox) -->
+                        <div class="form-group">
+                            <fieldset style="border:none; padding:0; margin:0;">
+                                <legend style="font-weight:600; font-size:0.9rem; color:var(--color-primary); margin-bottom:0.45rem;">
+                                    Интересующие разделы
+                                </legend>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" name="cf-subject" value="history">
+                                        📜 История
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="cf-subject" value="culture">
+                                        🎵 Культура
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="cf-subject" value="cuisine">
+                                        🍽️ Кухня
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="cf-subject" value="language">
+                                        💬 Языки
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="cf-subject" value="tourism">
+                                        ✈️ Туризм
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <!-- 6. Поле: Сообщение (textarea) -->
+                        <div class="form-group">
+                            <label for="cf-message">Сообщение *</label>
+                            <textarea id="cf-message"
+                                      name="cf-message"
+                                      class="form-control"
+                                      rows="5"
+                                      placeholder="Введите ваше сообщение (минимум 10 символов)..."
+                                      maxlength="500"
+                                      aria-required="true"
+                                      aria-describedby="cf-message-error char-counter"></textarea>
+                            <span class="form-error" id="cf-message-error" role="alert"></span>
+                            <div class="char-counter" id="char-counter" aria-live="polite">0 / 500</div>
+                        </div>
+
+                        <!-- Кнопка отправки -->
+                        <button type="submit" class="btn btn-primary" style="width:100%; font-size:1rem;">
+                            Отправить сообщение
+                        </button>
+
+                    </form>
+
+                    <!-- Результат обработки формы (динамически генерируется form-handler.js) -->
+                    <div id="submitted-data" aria-live="polite" style="margin-top:1rem;"></div>
+
+                </div>
+
+                <!-- ===== Контактная информация ===== -->
+                <div>
+                    <h2 class="section-title">Контактная информация</h2>
+
+                    <!-- Карточки контактов -->
+                    <div style="display:flex; flex-direction:column; gap:1rem; margin-bottom:2rem;">
+
+                        <div class="info-box">
+                            <p>
+                                <strong>📧 Электронная почта</strong><br>
+                                <a href="mailto:info@baltic-heritage.eu">info@baltic-heritage.eu</a>
+                            </p>
+                        </div>
+
+                        <div class="info-box">
+                            <p>
+                                <strong>🌐 Официальные ресурсы</strong><br>
+                                <a href="https://www.lithuania.travel" target="_blank" rel="noopener"
+                                   class="external-link">Lithuania Travel</a><br>
+                                <a href="https://www.latvia.eu"        target="_blank" rel="noopener"
+                                   class="external-link">Latvia.eu</a><br>
+                                <a href="https://www.visitestonia.com"  target="_blank" rel="noopener"
+                                   class="external-link">Visit Estonia</a>
+                            </p>
+                        </div>
+
+                        <div class="info-box">
+                            <p>
+                                <strong>📍 Рига, Латвия</strong><br>
+                                Латвийская национальная библиотека<br>
+                                Mūkusalas iela 3, Rīga, LV-1423
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Карта с якорем -->
+                    <div id="map" class="anchor-target">
+                        <h3>🗺️ Расположение</h3>
+                        <!--
+                          Встроенная карта Google Maps.
+                          Показывает центральный Балтийский регион.
+                        -->
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1874000!2d24.5!3d57.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2slv!4v1700000000000!5m2!1sru!2slv"
+                            style="width:100%; height:280px; border:none; border-radius:var(--radius-md); box-shadow:var(--shadow-sm);"
+                            allowfullscreen
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Карта Балтийского региона"
+                            aria-label="Карта расположения стран Балтии">
+                        </iframe>
+                        <p class="text-muted" style="font-size:0.82rem; margin-top:0.4rem;">
+                            Карта: Google Maps
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== Ссылки на внешние ресурсы ===== -->
+    <section aria-labelledby="resources-heading">
+        <div class="container">
+            <h2 class="section-title" id="resources-heading">Полезные ресурсы</h2>
+            <p class="section-subtitle">Официальные туристические и информационные порталы стран Балтии</p>
+
+            <div class="countries-grid">
+                <article class="country-card hover-lift">
+                    <div class="country-card-img" style="background:linear-gradient(135deg,#FFD700,#006A44);">
+                        <span style="font-size:3.5rem;">🇱🇹</span>
+                    </div>
+                    <div class="flag-stripe flag-lt"></div>
+                    <div class="country-card-body">
+                        <h3>Литва</h3>
+                        <ul style="list-style:none; padding:0; font-size:0.9rem;">
+                            <li><a href="https://www.lithuania.travel" target="_blank" rel="noopener" class="external-link">Туризм Литвы</a></li>
+                            <li><a href="https://www.lrt.lt/ru" target="_blank" rel="noopener" class="external-link">LRT на русском</a></li>
+                            <li><a href="https://ru.wikipedia.org/wiki/Литва" target="_blank" rel="noopener" class="external-link">Литва на Вики</a></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="country-card hover-lift">
+                    <div class="country-card-img" style="background:linear-gradient(135deg,#9E3039,#f8f8f8);">
+                        <span style="font-size:3.5rem;">🇱🇻</span>
+                    </div>
+                    <div class="flag-stripe flag-lv"></div>
+                    <div class="country-card-body">
+                        <h3>Латвия</h3>
+                        <ul style="list-style:none; padding:0; font-size:0.9rem;">
+                            <li><a href="https://www.latvia.eu" target="_blank" rel="noopener" class="external-link">latvia.eu</a></li>
+                            <li><a href="https://www.liveriga.com" target="_blank" rel="noopener" class="external-link">Туризм Риги</a></li>
+                            <li><a href="https://ru.wikipedia.org/wiki/Латвия" target="_blank" rel="noopener" class="external-link">Латвия на Вики</a></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="country-card hover-lift">
+                    <div class="country-card-img" style="background:linear-gradient(135deg,#0072CE,#000);">
+                        <span style="font-size:3.5rem;">🇪🇪</span>
+                    </div>
+                    <div class="flag-stripe flag-ee"></div>
+                    <div class="country-card-body">
+                        <h3>Эстония</h3>
+                        <ul style="list-style:none; padding:0; font-size:0.9rem;">
+                            <li><a href="https://www.visitestonia.com" target="_blank" rel="noopener" class="external-link">visitestonia.com</a></li>
+                            <li><a href="https://www.visittallinn.ee" target="_blank" rel="noopener" class="external-link">Туризм Таллина</a></li>
+                            <li><a href="https://ru.wikipedia.org/wiki/Эстония" target="_blank" rel="noopener" class="external-link">Эстония на Вики</a></li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ===== ПОДВАЛ ===== -->
+<footer class="site-footer" role="contentinfo">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo-text">Страны Балтии</div>
+                <p>Образовательный сайт о культуре и истории Литвы, Латвии и Эстонии.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="history.html">История</a></li>
+                    <li><a href="culture.html">Культура</a></li>
+                    <li><a href="gallery.html">Галерея</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <ul>
+                    <li><a href="#contact-section">Форма</a></li>
+                    <li><a href="#map">Карта</a></li>
+                    <li><a href="mailto:info@baltic-heritage.eu">Email</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Ресурсы</h4>
+                <ul>
+                    <li><a href="https://www.lithuania.travel" target="_blank" rel="noopener">lithuania.travel</a></li>
+                    <li><a href="https://www.latvia.eu" target="_blank" rel="noopener">latvia.eu</a></li>
+                    <li><a href="https://www.visitestonia.com" target="_blank" rel="noopener">visitestonia.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© <span id="footer-year">2024</span> Страны Балтии. Образовательный проект.</span>
+            <span>Данные: Wikimedia Commons (CC)</span>
+        </div>
+    </div>
+</footer>
+
+<!-- Скрипты -->
+<script src="scripts/main.js"></script>
+<script src="scripts/form-handler.js"></script>
+<script src="scripts/interactive.js"></script>
+</body>
+</html>

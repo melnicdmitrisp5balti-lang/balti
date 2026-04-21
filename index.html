@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!--
+  index.html — Главная страница сайта «Балтийские страны»
+  Тема: Культура и история Литвы, Латвии и Эстонии
+-->
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <!-- Мета-тег viewport для адаптивного дизайна -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Культура и история стран Балтии: Литва, Латвия, Эстония. Узнайте о традициях, природе и наследии балтийских народов.">
+    <meta name="keywords" content="Балтия, Литва, Латвия, Эстония, история, культура, традиции">
+    <meta name="author" content="Baltic Heritage Project">
+    <title>Страны Балтии — Культура и История</title>
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/animations.css">
+
+    <!-- Иконка сайта -->
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+<!-- Прогресс-бар прокрутки -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ===== ШАПКА САЙТА ===== -->
+<header class="site-header" role="banner">
+    <div class="header-inner">
+        <!-- Логотип -->
+        <a href="index.html" class="logo-wrap" aria-label="Главная страница — Страны Балтии">
+            <img src="images/logo.svg" alt="Логотип Страны Балтии" width="46" height="46">
+            <span>Страны Балтии</span>
+        </a>
+
+        <!-- Основная навигация -->
+        <nav aria-label="Главное меню">
+            <ul class="site-nav" id="main-nav" role="list">
+                <li><a href="index.html"   class="active">Главная</a></li>
+                <li><a href="history.html">История</a></li>
+                <li><a href="culture.html">Культура</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <!-- Кнопка мобильного меню -->
+        <button class="nav-toggle" id="nav-toggle"
+                aria-label="Открыть меню" aria-expanded="false" aria-controls="main-nav">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<!-- ===== ГЛАВНОЙ КОНТЕНТ ===== -->
+<main id="main-content">
+
+    <!-- Секция-герой -->
+    <section class="hero" aria-labelledby="hero-heading">
+        <!-- Декоративный canvas с частицами -->
+        <canvas id="particles-canvas"
+                style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;"
+                aria-hidden="true"></canvas>
+
+        <div class="hero-content">
+            <span class="hero-badge">Литва · Латвия · Эстония</span>
+            <h1 id="hero-heading">
+                <!-- Анимированный typewriter-текст -->
+                <span id="typewriter"
+                      data-texts='["Добро пожаловать в Балтию!", "Откройте мир истории.", "Познайте культуру народов.", "Балтийское наследие — для вас!"]'
+                      class="cursor-blink"></span>
+            </h1>
+            <p>Три уникальные страны на берегу Балтийского моря — с богатой историей,
+               древними традициями, средневековыми городами и живописной природой.</p>
+            <div class="hero-btns">
+                <a href="history.html" class="btn btn-primary btn-pulse">Изучить историю</a>
+                <a href="culture.html" class="btn btn-outline">Узнать о культуре</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция: О трёх странах Балтии -->
+    <section id="countries" aria-labelledby="countries-heading" class="anchor-target">
+        <div class="container">
+            <div class="text-center mb-3">
+                <h2 class="section-title" id="countries-heading">Три страны Балтии</h2>
+                <p class="section-subtitle">Каждая страна уникальна — своим языком, культурой и историей</p>
+            </div>
+
+            <!-- Карточки стран -->
+            <div class="countries-grid">
+
+                <!-- Литва -->
+                <article class="country-card reveal hover-lift">
+                    <div class="country-card-img">
+                        <img src="images/lithuania-flag.svg"
+                             alt="Флаг Литвы — жёлтая, зелёная и красная горизонтальные полосы">
+                    </div>
+                    <div class="flag-stripe flag-lt"></div>
+                    <div class="country-card-body">
+                        <h3>🇱🇹 Литва</h3>
+                        <p>Самая большая страна Балтии с богатой историей Великого Княжества Литовского.</p>
+                        <p><strong>Столица:</strong> Вильнюс<br>
+                           <strong>Население:</strong> ~2,8 млн<br>
+                           <strong>Площадь:</strong> 65 300 км²</p>
+                        <a href="history.html#lithuania" class="btn btn-secondary" style="font-size:0.85rem; padding:0.5rem 1.2rem;">Подробнее</a>
+                    </div>
+                </article>
+
+                <!-- Латвия -->
+                <article class="country-card reveal hover-lift">
+                    <div class="country-card-img">
+                        <img src="images/latvia-flag.svg"
+                             alt="Флаг Латвии — тёмно-красная, белая и тёмно-красная полосы">
+                    </div>
+                    <div class="flag-stripe flag-lv"></div>
+                    <div class="country-card-body">
+                        <h3>🇱🇻 Латвия</h3>
+                        <p>Страна янтаря и средневековой Риги — жемчужины архитектуры модерна.</p>
+                        <p><strong>Столица:</strong> Рига<br>
+                           <strong>Население:</strong> ~1,8 млн<br>
+                           <strong>Площадь:</strong> 64 589 км²</p>
+                        <a href="history.html#latvia" class="btn btn-secondary" style="font-size:0.85rem; padding:0.5rem 1.2rem;">Подробнее</a>
+                    </div>
+                </article>
+
+                <!-- Эстония -->
+                <article class="country-card reveal hover-lift">
+                    <div class="country-card-img">
+                        <img src="images/estonia-flag.svg"
+                             alt="Флаг Эстонии — синяя, чёрная и белая горизонтальные полосы">
+                    </div>
+                    <div class="flag-stripe flag-ee"></div>
+                    <div class="country-card-body">
+                        <h3>🇪🇪 Эстония</h3>
+                        <p>Самая цифровая страна мира с потрясающим средневековым Таллином.</p>
+                        <p><strong>Столица:</strong> Таллин<br>
+                           <strong>Население:</strong> ~1,3 млн<br>
+                           <strong>Площадь:</strong> 45 228 км²</p>
+                        <a href="history.html#estonia" class="btn btn-secondary" style="font-size:0.85rem; padding:0.5rem 1.2rem;">Подробнее</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция: Цифры и факты (счётчики) -->
+    <section id="facts" aria-labelledby="facts-heading" class="anchor-target">
+        <div class="container">
+            <div class="text-center mb-3">
+                <h2 class="section-title" id="facts-heading">Балтия в цифрах</h2>
+            </div>
+            <div class="facts-grid">
+                <div class="fact-card reveal">
+                    <span class="fact-number" data-count="3">0</span>
+                    <span class="fact-label">страны в регионе</span>
+                </div>
+                <div class="fact-card reveal">
+                    <span class="fact-number" data-count="5950">0</span>
+                    <span class="fact-label">км² балтийского побережья</span>
+                </div>
+                <div class="fact-card reveal">
+                    <span class="fact-number" data-count="2004">0</span>
+                    <span class="fact-label">год вступления в ЕС</span>
+                </div>
+                <div class="fact-card reveal">
+                    <span class="fact-number" data-count="1991">0</span>
+                    <span class="fact-label">год восстановления независимости</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция: Викторина -->
+    <section id="quiz-section" aria-labelledby="quiz-heading">
+        <div class="container">
+            <div class="text-center mb-3">
+                <h2 class="section-title" id="quiz-heading">Викторина о Балтии</h2>
+                <p class="section-subtitle">Проверьте свои знания о странах Балтийского региона</p>
+            </div>
+
+            <!-- Виджет викторины (заполняется через JavaScript) -->
+            <div id="quiz-widget">
+                <!-- Основной блок вопроса -->
+                <div id="quiz-main">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+                        <span id="quiz-question-num" style="color:var(--color-muted); font-size:0.9rem;">1 / 5</span>
+                        <span id="quiz-score" style="font-weight:600; color:var(--color-primary);">Очки: 0</span>
+                    </div>
+                    <h3 id="quiz-question-text"></h3>
+                    <div class="quiz-options" id="quiz-options"></div>
+                    <p id="quiz-result" style="min-height:1.5em;"></p>
+                    <button id="quiz-next" class="btn btn-secondary" style="display:none;">Следующий вопрос →</button>
+                </div>
+
+                <!-- Итоговый экран -->
+                <div id="quiz-final" style="display:none; text-align:center;">
+                    <p style="font-size:3rem; margin:0;">🏆</p>
+                    <h3>Викторина завершена!</h3>
+                    <p>Ваш результат: <strong id="quiz-final-score"></strong></p>
+                    <p id="quiz-final-msg" style="color:var(--color-muted);"></p>
+                    <button id="quiz-restart" class="btn btn-primary">Пройти ещё раз</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция: Карта Балтии (внутренняя ссылка-якорь) -->
+    <section id="map-section" aria-labelledby="map-heading" class="anchor-target">
+        <div class="container">
+            <div class="grid-2-3">
+                <div>
+                    <h2 class="section-title" id="map-heading">Карта региона</h2>
+                    <p>Страны Балтии расположены на восточном побережье Балтийского моря,
+                       к северо-востоку от Центральной Европы.</p>
+                    <p>Регион граничит с Россией, Беларусью, Польшей, Финляндией (через пролив)
+                       и Швецией (через море).</p>
+                    <div class="info-box">
+                        <p><strong>🌊 Балтийское море</strong> — почти пресноводное, площадью
+                           около 415 000 км². Оно связывает три страны между собой и с Северной Европой.</p>
+                    </div>
+                    <!-- Внешняя ссылка -->
+                    <a href="https://ru.wikipedia.org/wiki/Страны_Балтии"
+                       target="_blank" rel="noopener noreferrer"
+                       class="btn btn-secondary external-link">Подробнее на Википедии</a>
+                </div>
+                <div class="reveal">
+                    <img src="images/baltic-map.svg"
+                         alt="Карта Балтийского региона с отмеченными столицами Вильнюсом, Ригой и Таллином"
+                         style="border-radius:var(--radius-lg); box-shadow:var(--shadow-md); width:100%;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ===== ПОДВАЛ ===== -->
+<footer class="site-footer" role="contentinfo">
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Бренд -->
+            <div class="footer-brand">
+                <div class="footer-logo-text">Страны Балтии</div>
+                <p>Образовательный сайт о культуре и истории Литвы, Латвии и Эстонии.</p>
+            </div>
+
+            <!-- Навигация -->
+            <div class="footer-col">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="history.html">История</a></li>
+                    <li><a href="culture.html">Культура</a></li>
+                    <li><a href="gallery.html">Галерея</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                </ul>
+            </div>
+
+            <!-- Разделы -->
+            <div class="footer-col">
+                <h4>Разделы</h4>
+                <ul>
+                    <li><a href="index.html#countries">Страны</a></li>
+                    <li><a href="index.html#facts">Факты</a></li>
+                    <li><a href="index.html#quiz-section">Викторина</a></li>
+                    <li><a href="history.html#timeline">Хронология</a></li>
+                    <li><a href="gallery.html#video">Видео</a></li>
+                </ul>
+            </div>
+
+            <!-- Ресурсы -->
+            <div class="footer-col">
+                <h4>Ресурсы</h4>
+                <ul>
+                    <li><a href="https://ru.wikipedia.org/wiki/Страны_Балтии" target="_blank" rel="noopener">Википедия</a></li>
+                    <li><a href="https://www.latvia.eu" target="_blank" rel="noopener">latvia.eu</a></li>
+                    <li><a href="https://www.visitestonia.com" target="_blank" rel="noopener">visitestonia.com</a></li>
+                    <li><a href="https://www.lithuania.travel" target="_blank" rel="noopener">lithuania.travel</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Нижняя строка -->
+        <div class="footer-bottom">
+            <span>© <span id="footer-year">2024</span> Страны Балтии. Образовательный проект.</span>
+            <span>Изображения: <a href="https://commons.wikimedia.org" target="_blank" rel="noopener" style="color:inherit;">Wikimedia Commons</a> (CC)</span>
+        </div>
+    </div>
+</footer>
+
+<!-- Лайтбокс -->
+<div id="lightbox" role="dialog" aria-label="Просмотр изображения" aria-modal="true">
+    <button id="lightbox-close" aria-label="Закрыть">✕</button>
+    <img id="lightbox-img" src="" alt="Просмотр изображения">
+    <p id="lightbox-caption" style="color:rgba(255,255,255,0.7); text-align:center; padding:0.5rem;"></p>
+</div>
+
+<!-- Скрипты -->
+<script src="scripts/main.js"></script>
+<script src="scripts/interactive.js"></script>
+</body>
+</html>

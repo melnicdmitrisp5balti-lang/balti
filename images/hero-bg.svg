@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <!-- Фоновое изображение героя: балтийское побережье -->
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="60%" style="stop-color:#1b4a6e"/>
+      <stop offset="100%" style="stop-color:#2d7dd2"/>
+    </linearGradient>
+    <linearGradient id="seaGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e5f8e"/>
+      <stop offset="100%" style="stop-color:#0d3d5c"/>
+    </linearGradient>
+    <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#f7e59a;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#f7b731;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <!-- Небо -->
+  <rect width="1200" height="600" fill="url(#skyGrad)"/>
+  <!-- Звёзды -->
+  <g fill="white" opacity="0.7">
+    <circle cx="100" cy="50"  r="1.2"/><circle cx="250" cy="30"  r="0.9"/>
+    <circle cx="400" cy="70"  r="1.4"/><circle cx="550" cy="20"  r="1.0"/>
+    <circle cx="700" cy="55"  r="1.1"/><circle cx="900" cy="35"  r="1.3"/>
+    <circle cx="1050" cy="65" r="0.8"/><circle cx="1150" cy="40" r="1.2"/>
+    <circle cx="180" cy="110" r="0.9"/><circle cx="320" cy="90"  r="1.1"/>
+    <circle cx="480" cy="130" r="0.7"/><circle cx="650" cy="100" r="1.0"/>
+    <circle cx="820" cy="85"  r="1.3"/><circle cx="980" cy="115" r="0.8"/>
+  </g>
+  <!-- Лунное сияние -->
+  <ellipse cx="950" cy="90" rx="70" ry="70" fill="url(#moonGlow)" opacity="0.4"/>
+  <!-- Луна -->
+  <circle cx="950" cy="90" r="35" fill="#f7e59a" opacity="0.85"/>
+  <circle cx="965" cy="80" r="30" fill="#1b4a6e" opacity="0.7"/>
+  <!-- Море -->
+  <rect x="0" y="370" width="1200" height="230" fill="url(#seaGrad2)"/>
+  <!-- Волны на море -->
+  <path d="M0 385 Q100 375 200 385 Q300 395 400 385 Q500 375 600 385 Q700 395 800 385 Q900 375 1000 385 Q1100 395 1200 385" stroke="rgba(255,255,255,0.25)" stroke-width="2" fill="none"/>
+  <path d="M0 405 Q150 395 300 405 Q450 415 600 405 Q750 395 900 405 Q1050 415 1200 405" stroke="rgba(255,255,255,0.15)" stroke-width="2" fill="none"/>
+  <path d="M0 425 Q120 415 240 425 Q360 435 480 425 Q600 415 720 425 Q840 435 960 425 Q1080 415 1200 425" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" fill="none"/>
+  <!-- Береговая линия -->
+  <path d="M0 370 Q200 355 400 365 Q600 375 800 358 Q1000 340 1200 362 L1200 370 L0 370 Z" fill="#1a3d54"/>
+  <!-- Силуэт замка слева -->
+  <g fill="#0a1e2e" opacity="0.6">
+    <rect x="80"  y="290" width="12" height="80"/>
+    <rect x="75"  y="280" width="22" height="15"/>
+    <rect x="110" y="300" width="40" height="70"/>
+    <rect x="140" y="285" width="12" height="85"/>
+    <rect x="136" y="275" width="20" height="15"/>
+  </g>
+  <!-- Силуэт города справа -->
+  <g fill="#0a1e2e" opacity="0.55">
+    <rect x="1050" y="310" width="20" height="60"/>
+    <rect x="1080" y="295" width="25" height="75"/>
+    <rect x="1115" y="320" width="15" height="50"/>
+    <rect x="1140" y="305" width="30" height="65"/>
+    <!-- Шпиль -->
+    <polygon points="1092,280 1100,295 1085,295"/>
+    <rect x="1099" y="270" width="2" height="15" fill="#f7b731" opacity="0.5"/>
+  </g>
+  <!-- Отражение луны в воде -->
+  <ellipse cx="950" cy="450" rx="30" ry="80" fill="rgba(247,229,154,0.15)"/>
+</svg>

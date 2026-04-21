@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<!--
+  gallery.html — Галерея медиаресурсов: изображения, видео, аудио
+  Включает: фильтрацию, лайтбокс, HTML5 video, HTML5 audio, YouTube-embed
+-->
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport для адаптивного дизайна -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Галерея изображений, видео и аудио о странах Балтии: Литва, Латвия, Эстония.">
+    <meta name="keywords" content="галерея Балтия, фото, видео, аудио, Вильнюс, Рига, Таллин">
+    <meta name="author" content="Baltic Heritage Project">
+    <title>Галерея — Страны Балтии</title>
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/animations.css">
+
+    <!-- Иконка -->
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+<!-- Прогресс-бар прокрутки -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ===== ШАПКА ===== -->
+<header class="site-header" role="banner">
+    <div class="header-inner">
+        <a href="index.html" class="logo-wrap" aria-label="Главная страница">
+            <img src="images/logo.svg" alt="Логотип Страны Балтии" width="46" height="46">
+            <span>Страны Балтии</span>
+        </a>
+        <nav aria-label="Главное меню">
+            <ul class="site-nav" id="main-nav" role="list">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="history.html">История</a></li>
+                <li><a href="culture.html">Культура</a></li>
+                <li><a href="gallery.html" class="active">Галерея</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <button class="nav-toggle" id="nav-toggle"
+                aria-label="Открыть меню" aria-expanded="false" aria-controls="main-nav">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<!-- ===== КОНТЕНТ ===== -->
+<main id="main-content">
+
+    <!-- Герой страницы -->
+    <div class="page-hero">
+        <div class="container">
+            <h1>Галерея</h1>
+            <p>Изображения, видео и аудио о красоте и культуре стран Балтии</p>
+        </div>
+    </div>
+
+    <!-- Хлебные крошки -->
+    <div class="container">
+        <nav class="breadcrumb" aria-label="Хлебные крошки">
+            <a href="index.html">Главная</a>
+            <span aria-hidden="true">›</span>
+            <span aria-current="page">Галерея</span>
+        </nav>
+    </div>
+
+    <!-- ===== Галерея изображений ===== -->
+    <section id="images" aria-labelledby="gallery-heading" class="anchor-target">
+        <div class="container">
+            <div class="text-center mb-3">
+                <h2 class="section-title" id="gallery-heading">Фотогалерея</h2>
+                <p class="section-subtitle">Балтийские города, природа и культура</p>
+            </div>
+
+            <!-- Фильтры галереи (обрабатываются через interactive.js) -->
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.5rem;" role="group" aria-label="Фильтр по стране">
+                <button class="btn btn-primary"  data-filter="all">Все</button>
+                <button class="btn btn-outline"  data-filter="lt">🇱🇹 Литва</button>
+                <button class="btn btn-outline"  data-filter="lv">🇱🇻 Латвия</button>
+                <button class="btn btn-outline"  data-filter="ee">🇪🇪 Эстония</button>
+                <button class="btn btn-outline"  data-filter="nature">🌊 Природа</button>
+            </div>
+
+            <!-- Сетка галереи -->
+            <div class="gallery-grid" id="gallery-grid">
+
+                <!-- Вильнюс -->
+                <figure class="gallery-item reveal"
+                        data-country="lt"
+                        data-src="images/vilnius.svg"
+                        data-caption="Вильнюс — Замок Гедимина, столица Литвы"
+                        role="button" tabindex="0"
+                        aria-label="Открыть изображение: Вильнюс — Замок Гедимина">
+                    <img src="images/vilnius.svg"
+                         alt="Стилизованный вид Вильнюса с замком Гедимина на горе, средневековым городом и рекой Нярис">
+                    <div class="gallery-item-overlay">
+                        <span>🇱🇹 Вильнюс</span>
+                    </div>
+                </figure>
+
+                <!-- Рига -->
+                <figure class="gallery-item reveal"
+                        data-country="lv"
+                        data-src="images/riga.svg"
+                        data-caption="Рига — исторический центр, столица Латвии"
+                        role="button" tabindex="0"
+                        aria-label="Открыть изображение: Рига — исторический центр">
+                    <img src="images/riga.svg"
+                         alt="Стилизованная панорама Риги с Домским собором и историческими зданиями вдоль реки Даугава">
+                    <div class="gallery-item-overlay">
+                        <span>🇱🇻 Рига</span>
+                    </div>
+                </figure>
+
+                <!-- Таллин -->
+                <figure class="gallery-item reveal"
+                        data-country="ee"
+                        data-src="images/tallinn.svg"
+                        data-caption="Таллин — Старый город, столица Эстонии"
+                        role="button" tabindex="0"
+                        aria-label="Открыть изображение: Таллин — Старый город">
+                    <img src="images/tallinn.svg"
+                         alt="Стилизованный силуэт средневекового Таллина с башнями ратуши и церкви Олевисте на фоне закатного неба">
+                    <div class="gallery-item-overlay">
+                        <span>🇪🇪 Таллин</span>
+                    </div>
+                </figure>
+
+                <!-- Янтарный берег -->
+                <figure class="gallery-item reveal"
+                        data-country="nature"
+                        data-src="images/amber-coast.svg"
+                        data-caption="Янтарный берег — побережье Балтийского моря"
+                        role="button" tabindex="0"
+                        aria-label="Открыть изображение: Янтарный берег">
+                    <img src="images/amber-coast.svg"
+                         alt="Балтийское побережье в лучах заходящего солнца с янтарными камнями на золотистом пляже">
+                    <div class="gallery-item-overlay">
+                        <span>🌊 Янтарный берег</span>
+                    </div>
+                </figure>
+
+                <!-- Певческий праздник -->
+                <figure class="gallery-item reveal"
+                        data-country="ee"
+                        data-src="images/singing-festival.svg"
+                        data-caption="Певческий праздник — нематериальное наследие ЮНЕСКО"
+                        role="button" tabindex="0"
+                        aria-label="Открыть изображение: Певческий праздник">
+                    <img src="images/singing-festival.svg"
+                         alt="Тысячи певцов в национальных костюмах на певческом поле под открытым звёздным небом">
+                    <div class="gallery-item-overlay">
+                        <span>🎵 Певческий праздник</span>
+                    </div>
+                </figure>
+
+                <!-- Костюмы -->
+                <figure class="gallery-item reveal"
+                        data-country="lt"
+                        data-src="images/costumes.svg"
+                        data-caption="Традиционные костюмы народов Балтии"
+                        role="button" tabindex="0"
+                        aria-label="Открыть изображение: Традиционные костюмы">
+                    <img src="images/costumes.svg"
+                         alt="Традиционные национальные костюмы трёх балтийских народов: литовский, латышский и эстонский">
+                    <div class="gallery-item-overlay">
+                        <span>👗 Национальные костюмы</span>
+                    </div>
+                </figure>
+
+                <!-- Карта -->
+                <figure class="gallery-item reveal"
+                        data-country="nature"
+                        data-src="images/baltic-map.svg"
+                        data-caption="Карта Балтийского региона"
+                        role="button" tabindex="0"
+                        aria-label="Открыть изображение: Карта Балтийского региона">
+                    <img src="images/baltic-map.svg"
+                         alt="Стилизованная карта Балтийского региона с отмеченными столицами Литвы, Латвии и Эстонии">
+                    <div class="gallery-item-overlay">
+                        <span>🗺️ Карта региона</span>
+                    </div>
+                </figure>
+
+                <!-- Флаги -->
+                <figure class="gallery-item reveal"
+                        data-country="lv"
+                        data-src="images/latvia-flag.svg"
+                        data-caption="Флаг Латвии"
+                        role="button" tabindex="0"
+                        aria-label="Открыть изображение: Флаг Латвии">
+                    <img src="images/latvia-flag.svg"
+                         alt="Флаг Латвии: три горизонтальные полосы — тёмно-красная, белая и тёмно-красная">
+                    <div class="gallery-item-overlay">
+                        <span>🇱🇻 Флаг Латвии</span>
+                    </div>
+                </figure>
+
+                <figure class="gallery-item reveal"
+                        data-country="lt"
+                        data-src="images/lithuania-flag.svg"
+                        data-caption="Флаг Литвы"
+                        role="button" tabindex="0"
+                        aria-label="Открыть изображение: Флаг Литвы">
+                    <img src="images/lithuania-flag.svg"
+                         alt="Флаг Литвы: три горизонтальные полосы — жёлтая, зелёная и красная">
+                    <div class="gallery-item-overlay">
+                        <span>🇱🇹 Флаг Литвы</span>
+                    </div>
+                </figure>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Видео ===== -->
+    <section id="video" aria-labelledby="video-heading" class="anchor-target">
+        <div class="container">
+            <h2 class="section-title" id="video-heading">Видео о Балтии</h2>
+            <p class="section-subtitle">Документальные материалы об истории и культуре</p>
+
+            <!-- HTML5 video элемент (основной) -->
+            <div class="media-block">
+                <!--
+                  Встроенный HTML5 видеоэлемент.
+                  Источник: Wikimedia Commons — видео о странах Балтии.
+                  Лицензия: Creative Commons.
+                -->
+                <video controls preload="metadata" style="width:100%; max-height:480px; background:#000;"
+                       aria-label="Видео о странах Балтии">
+                    <!-- Основной источник: Wikimedia Commons -->
+                    <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/1/1b/Baltic_Sea_waves.ogv/Baltic_Sea_waves.ogv.360p.webm"
+                            type="video/webm">
+                    <!-- Резервный источник -->
+                    <source src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Baltic_Sea_waves.ogv"
+                            type="video/ogg">
+                    <!-- Текст для браузеров без поддержки video -->
+                    <p>Ваш браузер не поддерживает элемент <code>&lt;video&gt;</code>.
+                       <a href="https://upload.wikimedia.org/wikipedia/commons/1/1b/Baltic_Sea_waves.ogv"
+                          target="_blank" rel="noopener">Скачать видео</a>.</p>
+                </video>
+                <p class="media-caption">
+                    🌊 Волны Балтийского моря |
+                    Источник: <a href="https://commons.wikimedia.org" target="_blank" rel="noopener"
+                                 style="color:rgba(255,255,255,0.7);">Wikimedia Commons</a>
+                    (Creative Commons CC BY-SA)
+                </p>
+            </div>
+
+            <!-- YouTube embed (дополнительный) -->
+            <h3 class="mt-3">Документальный фильм о Балтии</h3>
+            <div class="media-block">
+                <!--
+                  YouTube-встроенный видеоплеер.
+                  Источник: официальный YouTube-канал.
+                -->
+                <iframe
+                    src="https://www.youtube.com/embed/iFX1k15kbeo"
+                    title="Балтийские страны — документальный фильм (YouTube)"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    loading="lazy"
+                    aria-label="Документальный фильм о странах Балтии">
+                </iframe>
+                <p class="media-caption">
+                    🎬 Страны Балтии: история и природа |
+                    Источник: YouTube
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Аудио ===== -->
+    <section id="audio" aria-labelledby="audio-heading" class="anchor-target">
+        <div class="container">
+            <h2 class="section-title" id="audio-heading">Аудио</h2>
+            <p class="section-subtitle">Народная музыка и гимны стран Балтии</p>
+
+            <div class="grid-2">
+                <!-- Гимн Литвы -->
+                <div class="audio-player">
+                    <h3>🇱🇹 Гимн Литвы</h3>
+                    <p style="opacity:0.85; font-size:0.9rem;">«Тautinė giesmė» (Национальный гимн).<br>
+                       Источник: Wikimedia Commons (общественное достояние)</p>
+                    <!--
+                      HTML5 audio элемент.
+                      Источник: Wikimedia Commons — гимн Литвы.
+                      Лицензия: общественное достояние.
+                    -->
+                    <audio controls preload="none"
+                           aria-label="Государственный гимн Литвы — Tautiška giesmė">
+                        <source src="https://upload.wikimedia.org/wikipedia/commons/3/39/Lithuania_national_anthem.ogg"
+                                type="audio/ogg">
+                        <source src="https://upload.wikimedia.org/wikipedia/commons/3/39/Lithuania_national_anthem.ogg"
+                                type="audio/mpeg">
+                        <p>Ваш браузер не поддерживает элемент <code>&lt;audio&gt;</code>.
+                           <a href="https://upload.wikimedia.org/wikipedia/commons/3/39/Lithuania_national_anthem.ogg"
+                              target="_blank" rel="noopener">Скачать аудио</a>.</p>
+                    </audio>
+                </div>
+
+                <!-- Гимн Эстонии -->
+                <div class="audio-player" style="background:linear-gradient(135deg, #0d3050, #0072CE);">
+                    <h3>🇪🇪 Гимн Эстонии</h3>
+                    <p style="opacity:0.85; font-size:0.9rem;">«Mu isamaa, mu õnn ja rõõm» (Моя родина, моё счастье).<br>
+                       Источник: Wikimedia Commons (общественное достояние)</p>
+                    <!--
+                      HTML5 audio элемент.
+                      Источник: Wikimedia Commons — гимн Эстонии.
+                      Лицензия: общественное достояние.
+                    -->
+                    <audio controls preload="none"
+                           aria-label="Государственный гимн Эстонии — Mu isamaa, mu õnn ja rõõm">
+                        <source src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Estonia_national_anthem.oga"
+                                type="audio/ogg">
+                        <p>Ваш браузер не поддерживает элемент <code>&lt;audio&gt;</code>.
+                           <a href="https://upload.wikimedia.org/wikipedia/commons/c/c8/Estonia_national_anthem.oga"
+                              target="_blank" rel="noopener">Скачать аудио</a>.</p>
+                    </audio>
+                </div>
+            </div>
+
+            <!-- Информация об авторских правах -->
+            <div class="info-box mt-3">
+                <p>ℹ️ <strong>Об авторских правах:</strong> Все медиафайлы на этой странице взяты с
+                   <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a>
+                   и распространяются по лицензиям Creative Commons или являются общественным достоянием (Public Domain).
+                   Ссылки на источники указаны под каждым медиафайлом.</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ===== ПОДВАЛ ===== -->
+<footer class="site-footer" role="contentinfo">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo-text">Страны Балтии</div>
+                <p>Образовательный сайт о культуре и истории Литвы, Латвии и Эстонии.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="history.html">История</a></li>
+                    <li><a href="culture.html">Культура</a></li>
+                    <li><a href="gallery.html">Галерея</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Галерея</h4>
+                <ul>
+                    <li><a href="#images">Изображения</a></li>
+                    <li><a href="#video">Видео</a></li>
+                    <li><a href="#audio">Аудио</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Медиа</h4>
+                <ul>
+                    <li><a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a></li>
+                    <li><a href="https://creativecommons.org" target="_blank" rel="noopener">Creative Commons</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© <span id="footer-year">2024</span> Страны Балтии. Образовательный проект.</span>
+            <span>Медиа: Wikimedia Commons (CC)</span>
+        </div>
+    </div>
+</footer>
+
+<!-- Лайтбокс для изображений -->
+<div id="lightbox" role="dialog" aria-label="Просмотр изображения" aria-modal="true">
+    <button id="lightbox-close" aria-label="Закрыть">✕</button>
+    <img id="lightbox-img" src="" alt="Просмотр изображения в полном размере">
+    <p id="lightbox-caption" style="color:rgba(255,255,255,0.75); text-align:center; padding:0.75rem 1rem; max-width:600px;"></p>
+</div>
+
+<!-- Скрипты -->
+<script src="scripts/main.js"></script>
+<script src="scripts/interactive.js"></script>
+</body>
+</html>

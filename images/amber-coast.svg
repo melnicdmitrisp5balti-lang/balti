@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <!-- Янтарный берег Балтийского моря -->
+  <defs>
+    <linearGradient id="beachSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffcc44"/>
+      <stop offset="40%" style="stop-color:#ff8822"/>
+      <stop offset="70%" style="stop-color:#cc4422"/>
+      <stop offset="100%" style="stop-color:#881122"/>
+    </linearGradient>
+    <linearGradient id="beachSea" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#cc6633"/>
+      <stop offset="100%" style="stop-color:#1b4a6e"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ffee88;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#ff8822;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <!-- Небо (закат) -->
+  <rect width="800" height="280" fill="url(#beachSky)"/>
+  <!-- Сияние солнца -->
+  <ellipse cx="400" cy="200" rx="100" ry="100" fill="url(#sunGlow)"/>
+  <!-- Солнце -->
+  <circle cx="400" cy="210" r="42" fill="#ffdd44" opacity="0.9"/>
+  <circle cx="400" cy="210" r="36" fill="#ffcc00"/>
+  <!-- Отражение в воде -->
+  <polygon points="380,280 420,280 450,400 350,400" fill="rgba(255,200,50,0.25)"/>
+  <!-- Море -->
+  <rect x="0" y="270" width="800" height="150" fill="url(#beachSea)"/>
+  <!-- Волны -->
+  <path d="M0 285 Q100 275 200 285 Q300 295 400 285 Q500 275 600 285 Q700 295 800 285" stroke="rgba(255,255,255,0.3)" stroke-width="2" fill="none"/>
+  <path d="M0 305 Q150 295 300 305 Q450 315 600 305 Q700 298 800 305" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
+  <!-- Пляж -->
+  <path d="M0 415 Q200 400 400 408 Q600 418 800 410 L800 500 L0 500 Z" fill="#e8c880"/>
+  <!-- Янтарные камушки -->
+  <g fill="#f7b731" opacity="0.7">
+    <ellipse cx="120" cy="440" rx="8" ry="5"/>
+    <ellipse cx="200" cy="455" rx="6" ry="4"/>
+    <ellipse cx="350" cy="445" rx="10" ry="6"/>
+    <ellipse cx="500" cy="460" rx="7"  ry="4"/>
+    <ellipse cx="650" cy="442" rx="9"  ry="5"/>
+    <ellipse cx="730" cy="458" rx="6"  ry="3"/>
+  </g>
+  <!-- Силуэты птиц -->
+  <g stroke="#331100" stroke-width="1.5" fill="none">
+    <path d="M150 160 Q158 155 165 160"/>
+    <path d="M170 155 Q178 150 185 155"/>
+    <path d="M600 140 Q608 135 615 140"/>
+    <path d="M620 148 Q628 143 635 148"/>
+    <path d="M640 135 Q648 130 655 135"/>
+  </g>
+  <!-- Надпись -->
+  <text x="400" y="490" text-anchor="middle" font-family="serif" font-size="20" fill="#5a3010" font-weight="bold">Янтарный берег Балтии</text>
+</svg>

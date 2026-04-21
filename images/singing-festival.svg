@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <!-- Певческий праздник: стилизованная иллюстрация хора -->
+  <defs>
+    <linearGradient id="stageBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1b4a6e"/>
+      <stop offset="100%" style="stop-color:#2d7dd2"/>
+    </linearGradient>
+  </defs>
+  <!-- Фон -->
+  <rect width="800" height="500" fill="url(#stageBg)"/>
+  <!-- Звёзды -->
+  <g fill="rgba(255,255,255,0.6)">
+    <circle cx="80"  cy="40"  r="1.5"/><circle cx="200" cy="25"  r="1"/>
+    <circle cx="350" cy="55"  r="1.8"/><circle cx="500" cy="30"  r="1.2"/>
+    <circle cx="650" cy="50"  r="1"/><circle cx="750" cy="35"  r="1.5"/>
+    <circle cx="150" cy="90"  r="1.2"/><circle cx="430" cy="80"  r="0.9"/>
+    <circle cx="600" cy="95"  r="1.4"/>
+  </g>
+  <!-- Сцена -->
+  <ellipse cx="400" cy="360" rx="340" ry="30" fill="#0d2e44"/>
+  <rect x="60" y="310" width="680" height="55" fill="#0d2e44" rx="8"/>
+  <!-- Задний ряд певцов -->
+  <g fill="#e8d5b8">
+    <ellipse cx="150" cy="295" rx="14" ry="16"/><ellipse cx="190" cy="295" rx="14" ry="16"/>
+    <ellipse cx="230" cy="295" rx="14" ry="16"/><ellipse cx="270" cy="295" rx="14" ry="16"/>
+    <ellipse cx="310" cy="295" rx="14" ry="16"/><ellipse cx="350" cy="295" rx="14" ry="16"/>
+    <ellipse cx="390" cy="295" rx="14" ry="16"/><ellipse cx="430" cy="295" rx="14" ry="16"/>
+    <ellipse cx="470" cy="295" rx="14" ry="16"/><ellipse cx="510" cy="295" rx="14" ry="16"/>
+    <ellipse cx="550" cy="295" rx="14" ry="16"/><ellipse cx="590" cy="295" rx="14" ry="16"/>
+    <ellipse cx="630" cy="295" rx="14" ry="16"/>
+  </g>
+  <!-- Тела (задний ряд) -->
+  <g fill="#2255a0">
+    <rect x="138" y="308" width="24" height="28" rx="2"/>
+    <rect x="178" y="308" width="24" height="28" rx="2"/>
+    <rect x="218" y="308" width="24" height="28" rx="2"/>
+    <rect x="258" y="308" width="24" height="28" rx="2"/>
+    <rect x="298" y="308" width="24" height="28" rx="2"/>
+    <rect x="338" y="308" width="24" height="28" rx="2"/>
+    <rect x="378" y="308" width="24" height="28" rx="2"/>
+    <rect x="418" y="308" width="24" height="28" rx="2"/>
+    <rect x="458" y="308" width="24" height="28" rx="2"/>
+    <rect x="498" y="308" width="24" height="28" rx="2"/>
+    <rect x="538" y="308" width="24" height="28" rx="2"/>
+    <rect x="578" y="308" width="24" height="28" rx="2"/>
+    <rect x="618" y="308" width="24" height="28" rx="2"/>
+  </g>
+  <!-- Передний ряд -->
+  <g fill="#f0dfc8">
+    <ellipse cx="170" cy="320" rx="15" ry="17"/><ellipse cx="215" cy="320" rx="15" ry="17"/>
+    <ellipse cx="260" cy="320" rx="15" ry="17"/><ellipse cx="305" cy="320" rx="15" ry="17"/>
+    <ellipse cx="350" cy="320" rx="15" ry="17"/><ellipse cx="395" cy="320" rx="15" ry="17"/>
+    <ellipse cx="440" cy="320" rx="15" ry="17"/><ellipse cx="485" cy="320" rx="15" ry="17"/>
+    <ellipse cx="530" cy="320" rx="15" ry="17"/><ellipse cx="575" cy="320" rx="15" ry="17"/>
+    <ellipse cx="620" cy="320" rx="15" ry="17"/>
+  </g>
+  <!-- Ноты вокруг -->
+  <text x="100" y="200" font-family="serif" font-size="40" fill="rgba(247,183,49,0.4)">♪</text>
+  <text x="680" y="180" font-family="serif" font-size="36" fill="rgba(247,183,49,0.35)">♫</text>
+  <text x="380" y="150" font-family="serif" font-size="44" fill="rgba(247,183,49,0.45)">♩</text>
+  <text x="550" y="240" font-family="serif" font-size="32" fill="rgba(247,183,49,0.3)">♬</text>
+  <text x="210" y="220" font-family="serif" font-size="36" fill="rgba(247,183,49,0.35)">♪</text>
+  <!-- Свет со сцены -->
+  <polygon points="350,310 300,100 450,100 400,310" fill="rgba(255,255,150,0.06)"/>
+  <!-- Надпись -->
+  <text x="400" y="440" text-anchor="middle" font-family="serif" font-size="24" fill="#f7b731" font-weight="bold">Певческий праздник</text>
+  <text x="400" y="468" text-anchor="middle" font-family="serif" font-size="15" fill="rgba(255,255,255,0.7)">Нематериальное наследие ЮНЕСКО</text>
+</svg>

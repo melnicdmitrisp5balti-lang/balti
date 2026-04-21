@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <!-- Вильнюс — Гора Гедимина с замком -->
+  <defs>
+    <linearGradient id="skyV" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#c8e8ff"/>
+      <stop offset="100%" style="stop-color:#e8f4ff"/>
+    </linearGradient>
+    <linearGradient id="hillV" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#5a8a40"/>
+      <stop offset="100%" style="stop-color:#3d6628"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#skyV)"/>
+  <!-- Облака -->
+  <ellipse cx="200" cy="80"  rx="70" ry="24" fill="white" opacity="0.85"/>
+  <ellipse cx="560" cy="95"  rx="65" ry="20" fill="white" opacity="0.8"/>
+  <!-- Гора Гедимина -->
+  <polygon points="250,380 400,210 550,380" fill="url(#hillV)"/>
+  <!-- Нижний склон -->
+  <ellipse cx="400" cy="375" rx="200" ry="25" fill="#4a7030" opacity="0.7"/>
+  <!-- Замок Гедимина (на вершине горы) -->
+  <rect x="360" y="170" width="80" height="80" fill="#d4c8a8"/>
+  <!-- Башня замка -->
+  <rect x="368" y="140" width="25" height="45" fill="#c8b890"/>
+  <rect x="427" y="150" width="20" height="35" fill="#c8b890"/>
+  <!-- Зубцы башни -->
+  <rect x="368" y="130" width="5"  height="12" fill="#b0a078"/>
+  <rect x="377" y="130" width="5"  height="12" fill="#b0a078"/>
+  <rect x="386" y="130" width="5"  height="12" fill="#b0a078"/>
+  <!-- Флаг Литвы -->
+  <rect x="387" y="105" width="2" height="30" fill="#8b7060"/>
+  <rect x="389" y="105" width="22" height="8"  fill="#FFD700"/>
+  <rect x="389" y="113" width="22" height="8"  fill="#006A44"/>
+  <rect x="389" y="121" width="22" height="8"  fill="#C1272D"/>
+  <!-- Город на заднем плане -->
+  <rect x="50"  y="290" width="90"  height="110" fill="#ddd4c0"/>
+  <rect x="160" y="270" width="70"  height="130" fill="#e0d6c4"/>
+  <rect x="250" y="295" width="80"  height="105" fill="#d8ceb8"/>
+  <rect x="500" y="280" width="85"  height="120" fill="#ddd4c0"/>
+  <rect x="600" y="265" width="75"  height="135" fill="#e0d4c0"/>
+  <rect x="690" y="290" width="90"  height="110" fill="#d8ceb8"/>
+  <!-- Река Нярис -->
+  <ellipse cx="400" cy="420" rx="370" ry="20" fill="#7ac0e0" opacity="0.45"/>
+  <path d="M30 415 Q200 405 400 418 Q600 432 770 420" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
+  <!-- Зелень -->
+  <rect x="0" y="390" width="800" height="110" fill="#4a7a30"/>
+  <!-- Надпись -->
+  <text x="400" y="478" text-anchor="middle" font-family="serif" font-size="20" fill="#2a3a10" font-weight="bold">Вильнюс — Замок Гедимина</text>
+</svg>
