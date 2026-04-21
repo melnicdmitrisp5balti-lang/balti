@@ -1,0 +1,316 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+     font-family: "Montserrat", sans-serif;
+     font-size: 17px;
+}
+
+main {
+    min-height: 100vh;
+}
+
+header {
+    background: #264d54;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 10px 15px 5px 15px;
+}
+
+navbar {
+    margin-left: 30px;
+    margin-bottom: 10px;
+    display: inline-block;
+    overflow: auto;
+}
+
+navbar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+navbar a:hover {
+    color: #f3deca;
+    text-decoration: underline 1px;
+}
+
+footer {
+    min-height: 80px;
+    background: #264d54;
+    text-align: center;
+    color: white;
+    padding-top: 35px;
+}
+
+p {
+    line-height: 150%;
+    text-indent: 30px;
+}
+
+li {
+    margin-top: 10px;
+    padding-left: 15px;
+    list-style-image: linear-gradient(hsla(280, 82%, 57%, 0.685), hsla(280, 82%, 57%, 0.397));
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+      font-family: "Dancing Script", cursive;
+}
+
+h1 {
+    font-size: 270%;
+}
+
+h2 {
+    font-size: 200%;
+}
+
+section {
+    padding: 90px 15%;
+}
+
+.logo {
+    height: 50px;
+}
+
+#index {
+    background:  linear-gradient(hsla(0, 0%, 0%, 0.582), #000000bd), url('../images/index.png');
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.index-info {
+    margin-top: 25vh;
+    text-align: center;
+}
+
+.index-info h1 {
+    font-size: 350%;
+    color: white;
+    border: 2px solid gray;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: hsla(189, 38%, 24%, 0.598);
+}
+
+.link-index {
+    color: white;
+    text-decoration: underline #fa9483 2px;
+    font-size: 20px;
+}
+
+.link-index:hover {
+    color: #fedeca;
+}
+
+.more-info {
+    background: linear-gradient(180deg, #f6fbfc 0%, #ffffff 100%);
+}
+
+.more-info-hero {
+    background: linear-gradient(120deg, #20444a, #2f6872);
+    color: white;
+    padding: 30px;
+    border-radius: 14px;
+    margin-bottom: 28px;
+    box-shadow: rgba(38, 77, 84, 0.28) 0px 12px 30px;
+}
+
+.more-info-hero p {
+    text-indent: 0;
+    margin: 10px 0 0;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 20px 0 28px;
+}
+
+.info-card {
+    background: #ffffff;
+    border: 1px solid #d5e7ea;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: rgba(100, 100, 111, 0.08) 0px 7px 22px 0px;
+}
+
+.info-card h3 {
+    font-size: 170%;
+    margin-bottom: 8px;
+}
+
+.info-card p {
+    text-indent: 0;
+    margin: 0;
+}
+
+.info-block {
+    margin-top: 24px;
+    padding: 20px 22px;
+    background: #eef7f8;
+    border-left: 6px solid #2f6872;
+    border-radius: 8px;
+}
+
+.info-block h2 {
+    margin-bottom: 10px;
+}
+
+.info-block p {
+    text-indent: 0;
+    margin: 0 0 10px;
+}
+
+.info-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.info-list li {
+    margin-top: 8px;
+}
+
+.centered {
+    text-align: center;
+}
+
+.vframe {
+    width: 100%;
+    height: 30vw;
+    border: 2px solid #2d4057;
+    border-radius: 5px;
+}
+
+.loc {
+    overflow: auto;
+    border-bottom: 3px #f3deca dashed;
+    margin-bottom: 10px;
+}
+
+.loc img {
+    height: 23vh;
+    width: 23vh;
+    object-fit: cover;
+    border-radius: 50%;
+    float:left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.harta {
+    width: 100%;
+    height: 40vh;
+}
+
+.row {
+    overflow: auto;
+}
+
+[class^="col-"] {
+    float: left;
+    padding: 0px 10px;
+}
+
+.col-50 {
+    width: 50%;
+}
+
+.contacte {
+    border: 2px solid #693607;
+    border-radius: 5px;
+    background-color: #ffffff9b;
+    padding: 5px 5%;
+    height: 330px;
+    margin-bottom: 15px;
+}
+
+.cform {
+    border: 2px solid #693607;
+    border-radius: 5px;
+    background-color: #ffffff9b;
+    padding: 5px 5%;
+}
+
+.cform input, .cform textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 15px;
+    font-family: inherit;
+    margin-bottom: 10px;
+    padding: 4px 6px;
+    
+}
+
+#hamburger {
+    color: white;
+    font-size: 28px;
+    position: absolute;
+    right: 22px;
+    top: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+/* media trebue sa fie la sfirsitul fisierului */
+@media (max-width: 800px) {
+
+    body {
+        font-size: 16px;
+    }
+  section {
+    padding: 90px 10px;
+  }
+
+  .index-info h1 {
+    font-size: 250%;
+  }
+
+  .vframe {
+    height: 55vw;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .more-info-hero {
+    padding: 22px;
+  }
+
+  [class^="col-"] {
+   width: 100% !important;
+}
+
+  navbar {
+    display: block;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  navbar a {
+    display: none;
+    margin-right: 0;
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  navbar.mobile a {
+    display: block;
+    text-align: center;
+  }
+
+  #hamburger {
+    display: block;
+  }
+}
